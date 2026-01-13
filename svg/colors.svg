@@ -1,0 +1,41 @@
+<svg version="1.1"
+     baseProfile="full"
+     width="256" height="256"
+     xmlns="http://www.w3.org/2000/svg">
+
+     <!-- 
+     #4299E1
+     #42E199
+     #9942E1
+     #99E142
+     #E14299
+     #E19942
+     #1A365D
+     #FFFFFF
+     -->
+
+     <rect x="0" y="0" width='256' height='32' fill='#4299E1' />
+     <text x="128" y="28" text-anchor="middle" fill='#1A365D' font-family='imagine YOKOHAMA' font-size='32px'>#4299E1</text>
+     
+     <rect x="0" y="32" width='256' height='32' fill='#42E199' />
+     <text x="128" y="60" text-anchor="middle" fill='#1A365D' font-family='imagine YOKOHAMA' font-size='32px'>#42E199</text>
+
+     <rect x="0" y="64" width='256' height='32' fill='#9942E1' />
+     <text x="128" y="92" text-anchor="middle" fill='#1A365D' font-family='imagine YOKOHAMA' font-size='32px'>#9942E1</text>
+
+     <rect x="0" y="96" width='256' height='32' fill='#99E142' />
+     <text x="128" y="124" text-anchor="middle" fill='#1A365D' font-family='imagine YOKOHAMA' font-size='32px'>#99E142</text>
+
+     <rect x="0" y="128" width='256' height='32' fill='#E14299' />
+     <text x="128" y="156" text-anchor="middle" fill='#1A365D' font-family='imagine YOKOHAMA' font-size='32px'>#E14299</text>
+
+     <rect x="0" y="160" width='256' height='32' fill='#E19942' />
+     <text x="128" y="188" text-anchor="middle" fill='#1A365D' font-family='imagine YOKOHAMA' font-size='32px'>#E19942</text>
+
+     <rect x="0" y="192" width='256' height='32' fill='#1A365D' />
+     <text x="128" y="220" text-anchor="middle" fill='#FFFFFF' font-family='imagine YOKOHAMA' font-size='32px'>#1A365D</text>
+
+     <rect x="0" y="224" width='256' height='32' fill='#FFFFFF' />
+     <text x="128" y="252" text-anchor="middle" fill='#1A365D' font-family='imagine YOKOHAMA' font-size='32px'>Colors</text>
+     
+</svg>
