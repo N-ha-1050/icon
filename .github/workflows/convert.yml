@@ -20,6 +20,16 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y inkscape
 
+      - name: Install Custom Fonts
+        run: |
+          # システムのフォントディレクトリを作成
+          sudo mkdir -p /usr/local/share/fonts/custom
+          # リポジトリ内の fonts フォルダからコピー
+          sudo cp fonts/*.ttf /usr/local/share/fonts/custom/ || true
+          sudo cp fonts/*.otf /usr/local/share/fonts/custom/ || true
+          # フォントキャッシュを更新
+          sudo fc-cache -fv
+
       - name: Sync SVG to PNG
         run: |
           # 1. 保存先ディレクトリの準備
