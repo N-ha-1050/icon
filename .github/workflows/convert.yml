@@ -1,9 +1,9 @@
-name: Bulk Convert SVG to PNG
+name: Bulk Convert and Sync SVG to PNG
 
 on:
   push:
     paths:
-      - 'svg/**.svg' # svgディレクトリ内のsvgファイルが変更された時のみ実行
+      - 'svg/**.svg'
 
 jobs:
   convert:
@@ -20,21 +20,20 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y inkscape
 
-      - name: Convert All SVGs
+      - name: Sync SVG to PNG
         run: |
-          # 保存先のディレクトリを作成（存在しない場合）
+          # 1. 保存先ディレクトリの準備
           mkdir -p png
           
-          # svgディレクトリ内の各ファイルに対して処理
+          # 2. 古い PNG ファイルを一旦すべて削除（同期のため）
+          rm -f png/*.png
+          
+          # 3. svg ディレクトリ内の各ファイルに対して処理
           for file in svg/*.svg; do
-            # ファイルが存在するか確認（空のディレクトリ対策）
             [ -e "$file" ] || continue
-            
-            # 拡張子を除いたファイル名を取得
             filename=$(basename "$file" .svg)
-            
             echo "Converting $file to png/$filename.png"
-            inkscape -o "png/$filename.png" -w 1024 "$file"
+            inkscape -o "png/$filename.png" -w 256 "$file"
           done
 
       - name: Commit and Push
@@ -42,12 +41,11 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # pngディレクトリ全体をステージング
-          git add png/*.png
+          # 4. 削除されたファイルも含めてステージング
+          git add -A png/
           
-          # 変更がある場合のみコミットしてプッシュ
           if ! git diff --cached --quiet; then
-            git commit -m "Auto-generate PNGs from svg directory"
+            git commit -m "Sync PNGs with SVG directory (including deletes/renames)"
             git push
           else
             echo "No changes to commit"
