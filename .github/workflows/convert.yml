@@ -15,10 +15,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Inkscape
+      - name: Install librsvg
         run: |
           sudo apt-get update
-          sudo apt-get install -y inkscape
+          sudo apt-get install -y librsvg2-bin
 
       - name: Install Custom Fonts
         run: |
@@ -43,7 +43,7 @@ jobs:
             [ -e "$file" ] || continue
             filename=$(basename "$file" .svg)
             echo "Converting $file to png/$filename.png"
-            inkscape -o "png/$filename.png" -w 256 "$file"
+            rsvg-convert -f png -w 256 "$file" -o "png/$filename.png"
           done
 
       - name: Commit and Push
