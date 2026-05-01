@@ -1,0 +1,27 @@
+<!-- 円弧ver -->
+<svg version="1.1"
+     baseProfile="full"
+     width="256" height="256"
+     xmlns="http://www.w3.org/2000/svg">
+   <rect width='256' height='256' fill='#4299E1' />
+   <circle cx='128' cy='128' r='128' fill='none' stroke='#1A365D' stroke-width='1' />
+   <!-- <path d="M 80 192
+            V 64
+            L 176 192
+            V 64"
+         stroke="#1A365D"
+         stroke-width="32"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         fill="none" /> -->
+   <path d="M 80 192
+            A 80 80 0 0 1 80 64
+            L 176 192
+            A 80 80 0 0 0 176 64"
+         stroke="#1A365D"
+         stroke-width="32"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         fill="none" />
+   <!-- <ellipse cx='128' cy='128' rx='80' ry='80' fill='none' stroke='#1A365D' stroke-width='32' /> -->
+</svg>

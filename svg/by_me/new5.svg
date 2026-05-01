@@ -1,0 +1,20 @@
+<svg version="1.1"
+     baseProfile="full"
+     width="256" height="256"
+     xmlns="http://www.w3.org/2000/svg">
+        <rect width='256' height='256' fill='#4299E1' />
+        <circle cx='128' cy='128' r='128' fill='none' stroke='#1A365D' stroke-width='1' />
+        
+        <!-- 補助線 -->
+        <!-- <path d="M 0 0 L 256 128" stroke="#1A365D" stroke-width="2" />
+        <path d="M 0 256 L 256 128" stroke="#1A365D" stroke-width="2" /> -->
+        
+        <!-- ロゴ -->
+        <path d="M80 40 V216" stroke="#1A365D" stroke-width="33" stroke-linecap="round" fill="none" />
+        <path d="M176 88 V168" stroke="#1A365D" stroke-width="15" stroke-linecap="round" fill="none" />
+        <!-- 80,40 → 176,168 (96, 128: 3, 4) -->
+        <!-- 80,40 93.2,30.1 66.8,49.9 -->
+        <!-- 176,168 180,165 182,163.5 170,172.5 -->
+        <polygon points="93.2,30.1 182,163.5 170,172.5 66.8,49.9" fill="#1A365D" />
+        <!-- <path d="M80 64 L176 192" stroke="#1A365D" stroke-width="32" stroke-linecap="round" fill="none" /> -->
+</svg>
